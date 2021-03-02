@@ -9,5 +9,7 @@ test('created an employee object', () => {
 });
 
 test("gets employee name value", () => {
-    
-})
+    const Employee = new Employee('Kalib');
+
+    expect(employee.getName()).toEqual(expect.stringContaining(employee.name.toString()));
+});
