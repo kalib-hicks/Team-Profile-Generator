@@ -12,3 +12,43 @@ body {
     justify-content: center;
     align-items: center;
 }
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:75px;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    left: 80px;
+}
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    font-size: 20px;
+    left: 10px;
+}
+.member-card {
+    width: 250px;
+    height: 320px;
+    margin-bottom: 50px;
+    background-color: rgb(240, 238, 238);
+    box-shadow: 5px 8px 8px black;
+    border-top-left-radius: 10px;
+}
+.card-container {
+    top: 250px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: absolute;
+}
+.card {
+    background-color: rgb(238, 215, 11);
+    width: 246px;
+    border: 2px solid rgb(238, 215, 11);
+    border-top-left-radius: 10px;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
