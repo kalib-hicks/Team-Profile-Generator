@@ -64,6 +64,26 @@ function addMember() {
             "no"
         ],
         name: "moreMembers"
-    }
-])
-})
+        }])
+        .then(function({roleInfo, moreMembers}) {
+            let newMember;
+            if (role === "Engineer") {
+                newMember = new Engineer(name, id, email, roleInfo);
+            } else if (role === "Intern") {
+                newMember = new Intern(name, id, email, roleInfo);
+            } else {
+                newMember = new Manager(name, id, email, roleInfo);
+            }
+            employees.push(newMember);
+            addHtml(newMember)
+            .then(function() {
+                if (moreMembers === "yes") {
+                    addMember();
+                } else {
+                    finishHtml();
+                }
+            });
+            
+        });
+    });
+}
