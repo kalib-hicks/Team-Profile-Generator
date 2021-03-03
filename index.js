@@ -42,3 +42,28 @@ function addMember() {
     }
 ])
 }
+
+.then(function({name, role, email, id}) {
+    let roleInfo = "";
+    if (role === "Engineer") {
+        roleInfo = "GitHub username";
+    } else if (role === "Intern") {
+        roleInfo = "school";
+    } else {
+        roleInfo ="office number";
+    }
+    inquirer.prompt([{
+        message: `Employee ${roleInfo}`,
+        name: "roleInfo"
+    },
+    {
+        type: "list",
+        message: "Add more employees?",
+        choices: [
+            "yes",
+            "no"
+        ],
+        name: "moreMembers"
+    }
+])
+})
