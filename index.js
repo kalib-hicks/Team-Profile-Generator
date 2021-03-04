@@ -12,13 +12,13 @@ const employees = [];
 
 //start webpage
 function initApp() {
-    startHtml();
-    addMember();
-}
+     
+      addMember();
+};
 
 function addMember() {
     inquirer.prompt([{
-        message: "Name"
+        message: "Name",
         name: "name"
     },
     {
@@ -41,9 +41,9 @@ function addMember() {
         name: "email"
     }
 ])
-}
 
-.then(function({name, role, email, id}) {
+
+    .then(function({name, role, email, id}) {
     let roleInfo = "";
     if (role === "Engineer") {
         roleInfo = "GitHub username";
@@ -85,19 +85,21 @@ function addMember() {
             });
             
         });
+        startHtml();
     });
-}
+
 
 // initiate html
 
-function startHtml() {
+
+  function startHtml() {
     const html = `<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" "./dist/style.css">
         <title>Team Profile</title>
     </head>
     <body>
@@ -106,12 +108,13 @@ function startHtml() {
     </nav>
     <div class="container">
         <div class="row">`;
-fs.writeFile("./output/team.html", html, function(err) {
+fs.writeFile("./team.html", html, function(err) {
     if (err) {
         console.log(err);
     }
+
 });
-console.log("start");
+
 }
 
 function addHtml(member) {
@@ -120,6 +123,8 @@ function addHtml(member) {
         const role = member.getRole();
         const id = member.getId();
         const email = member.getEmail();
+        const phone = member.getPhone();
+        const school = member.getSchool();
         let data = "";
         if (role === "Engineer") {
             const gitHub = member.getGithub();
@@ -146,20 +151,20 @@ function addHtml(member) {
             </div>
         </div>`;
         } else {
-            const officePhone = member.getOfficeNumber();
+            const phone = member.getPhone();
             data = `<div class="col-6">
             <div class="card mx-auto mb-3" style="width: 18rem">
             <h5 class="card-header">${name}<br /><br />Manager</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item">Email Address: ${email}</li>
-                <li class="list-group-item">Office Phone: ${officePhone}</li>
+                <li class="list-group-item">Office Phone: ${phone}</li>
             </ul>
             </div>
         </div>`
         }
         console.log("adding team member");
-        fs.appendFile("./output/team.html", data, function (err) {
+        fs.appendFile("./team.html", data, function (err) {
             if (err) {
                 return reject(err);
             };
@@ -181,12 +186,12 @@ function finishHtml() {
 </body>
 </html>`;
 
-    fs.appendFile("./output/team.html", html, function (err) {
+    fs.appendFile("./team.html", html, function (err) {
         if (err) {
             console.log(err);
         };
     });
     console.log("end");
 }
-
+}
 initApp();
