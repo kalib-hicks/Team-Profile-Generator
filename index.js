@@ -123,8 +123,8 @@ function addHtml(member) {
         const role = member.getRole();
         const id = member.getId();
         const email = member.getEmail();
-        const phone = member.getPhone();
-        const school = member.getSchool();
+        //const phone = member.getPhone();
+       // const school = member.getSchool();
         let data = "";
         if (role === "Engineer") {
             const gitHub = member.getGithub();
@@ -138,31 +138,31 @@ function addHtml(member) {
             </ul>
             </div>
         </div>`;
-        } else if (role === "Intern") {
-            const school = member.getSchool();
-            data = `<div class="col-6">
-            <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Intern</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email Address: ${email}</li>
-                <li class="list-group-item">School: ${school}</li>
-            </ul>
-            </div>
-        </div>`;
-        } else {
-            const phone = member.getPhone();
-            data = `<div class="col-6">
-            <div class="card mx-auto mb-3" style="width: 18rem">
-            <h5 class="card-header">${name}<br /><br />Manager</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email Address: ${email}</li>
-                <li class="list-group-item">Office Phone: ${phone}</li>
-            </ul>
-            </div>
-        </div>`
-        }
+        } //else if (role === "Intern") {
+           // const school = member.getSchool();
+           // data = `<div class="col-6">
+            //<div class="card mx-auto mb-3" style="width: 18rem">
+            //<h5 class="card-header">${name}<br /><br />Intern</h5>
+            //<ul class="list-group list-group-flush">
+            //    <li class="list-group-item">ID: ${id}</li>
+            //    <li class="list-group-item">Email Address: ${email}</li>
+             //   <li class="list-group-item">School: ${school}</li>
+           // </ul>
+          //  </div>
+       // </div>`;
+        //} else {
+          //  const phone = member.getPhone();
+          //  data = `<div class="col-6">
+           // <div class="card mx-auto mb-3" style="width: 18rem">
+           // <h5 class="card-header">${name}<br /><br />Manager</h5>
+           // <ul class="list-group list-group-flush">
+            //    <li class="list-group-item">ID: ${id}</li>
+            //    <li class="list-group-item">Email Address: ${email}</li>
+             //   <li class="list-group-item">Office Phone: ${phone}</li>
+         //   </ul>
+          //  </div>
+        //</div>`
+        //}
         console.log("adding team member");
         fs.appendFile("./team.html", data, function (err) {
             if (err) {
