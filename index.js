@@ -1,5 +1,11 @@
-const App = require('./lib/App');
+const inquirer = require("inquirer");
 
+const Employee = require("./lib/Employee");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
+
+const fs = require("fs");
 // employees array
 const employees = [];
 
@@ -92,7 +98,8 @@ function addMember() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" "./dist/style.css">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <title>Team Profile</title>
     </head>
     <body>
@@ -100,7 +107,7 @@ function addMember() {
         <span class="navbar-brand mb-0 h1 w-100 text-center">Team Profile</span>
     </nav>
     <div class="row">
-    <div class="card bg-dark justify-content-center align-items-center" style="width: 18rem;">
+    <div class="card bg-dark justify-content-center align-items-center" style="width: 100%;">
         <div class="col card-header">
             <h3>Kalib</h3>
             </div>
@@ -110,11 +117,12 @@ function addMember() {
                 </div>
 
                 <ul class="list-group list-group-flush-text">
+                <li class="list-group-item">ID: 2</li>
                 <li class="list-group-item">Email: kalib.hicks@gmail.com</li>
-                <li class="list-group-item">Office Number: 1234567890</li>
+                <li class="list-group-item">Office Number: 2</li>
                 </ul>
 
-    <div class="card bg-dark justify-content-center align-items-center" style="width: 18rem;">
+    <div class="card bg-dark justify-content-center align-items-center" style="width: 100%;">
         <div class="col card-header">
               <h3>Kalib</h3>
               </div>
@@ -125,9 +133,28 @@ function addMember() {
               <ul class="list-group list-group-flush text">
               <li class="list-group-item">ID: 2</li>
               <li class="list-group-item">Email: kalib.hicks@gmail.com</li>
-              <li class="list-group-item">GitHub: owodu001</li>
+              <li class="list-group-item">GitHub: github.com/kalib-hicks</li>
           </ul>
       </div>
+      <div class="card bg-dark justify-content-center align-items-center" style="width: 100%;">
+        <div class="col card-header">
+              <h3>Kalib</h3>
+              </div>
+    
+          <div class="col card-header">
+                  <h3>Intern</h3>
+              </div>
+              <ul class="list-group list-group-flush text">
+              <li class="list-group-item">ID: 2</li>
+              <li class="list-group-item">Email: kalib.hicks@gmail.com</li>
+              <li class="list-group-item">School: UCF</li>
+          </ul>
+      </div>
+</body>
+</html>`
+
+
+
 
 fs.writeFile("./team-profile.html", html, function(err) {
     if (err) {
