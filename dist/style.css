@@ -13,3 +13,16 @@
     border-radius: 5px;
     padding: 25px;
 }
+
+.col {
+    flex: 1;
+    text-align: center;
+}
+
+.card {
+    margin: 25px;
+    color: turquoise;
+    background-color: white;
+    border-radius: 5px;
+    padding: 25px;
+}
