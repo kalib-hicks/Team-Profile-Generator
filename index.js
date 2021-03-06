@@ -101,7 +101,19 @@ function addMember() {
     </nav>
     <div class="row">
     <div class="card bg-dark justify-content-center align-items-center" style="width: 18rem;">
-        `;
+        <div class="col card-header">
+            <h3>Kalib</h3>
+            </div>
+            
+            <div class="col card-header">
+                <h3>Manager</h3>
+                </div>
+
+                <ul class="list-group list-group-flush-text">
+                <li class="list-group-item">Email: kalib.hicks@gmail.com</li>
+                <li class="list-group-item">Office Number: 1234567890</li>
+                </ul>
+    ;
 fs.writeFile("./team-profile.html", html, function(err) {
     if (err) {
         console.log(err);
