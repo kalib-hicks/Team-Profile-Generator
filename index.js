@@ -108,7 +108,7 @@ function addMember() {
     </nav>
     <div class="container">
         <div class="row">`;
-fs.writeFile("./team.html", html, function(err) {
+fs.writeFile("./team-profile.html", html, function(err) {
     if (err) {
         console.log(err);
     }
@@ -164,7 +164,7 @@ function addHtml(member) {
         //</div>`
         //}
         console.log("adding team member");
-        fs.appendFile("./team.html", data, function (err) {
+        fs.appendFile("./team-profile.html", data, function (err) {
             if (err) {
                 return reject(err);
             };
@@ -186,7 +186,7 @@ function finishHtml() {
 </body>
 </html>`;
 
-    fs.appendFile("./team.html", html, function (err) {
+    fs.appendFile("./team-profile.html", html, function (err) {
         if (err) {
             console.log(err);
         };
